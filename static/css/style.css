@@ -1,0 +1,114 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input, select {
+  border-color: #792E8F !important; }
+
+#stewardNavigation {
+  background-color: #792E8F !important; }
+
+#loginCard .card-header {
+  background-color: #EBE6EF;
+  border-bottom: 1px solid #792E8F;
+  border-top: 1px solid #792E8F; }
+  #loginCard .card-header i {
+    color: rgba(255, 131, 10, 0.99); }
+
+#loginCard .btn-outline-secondary {
+  color: #792E8F;
+  border-color: #792E8F; }
+
+#loginCard .btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #9346cb;
+  border-color: #9346cb; }
+
+#registerModal .modal-header, #passwordResetModal .modal-header {
+  padding: 10px;
+  border-bottom: 1px solid #792E8F; }
+  #registerModal .modal-header i, #passwordResetModal .modal-header i {
+    color: rgba(255, 187, 60, 0.99); }
+
+#registerModal .card, #passwordResetModal .card {
+  border: 0; }
+  #registerModal .card .card-header, #passwordResetModal .card .card-header {
+    background-color: #EBE6EF;
+    border-bottom: 1px solid #792E8F; }
+  #registerModal .card .btn-outline-secondary, #passwordResetModal .card .btn-outline-secondary {
+    color: #792E8F;
+    border-color: #792E8F; }
+  #registerModal .card .btn-outline-secondary:hover, #passwordResetModal .card .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #9346cb;
+    border-color: #9346cb; }
+
+.landing-content {
+  padding-top: 0;
+  min-height: 700px;
+  background-size: cover;
+  background: url("../img/landing_background.jpg") no-repeat fixed; }
+  .landing-content .landing-overlay {
+    background-color: rgba(121, 46, 143, 0.1);
+    position: relative;
+    margin: 0;
+    padding-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px; }
+
+.main-content {
+  padding-top: 0;
+  min-height: 700px;
+  background-size: cover;
+  background: url("../img/landing_background.jpg") no-repeat fixed; }
+  .main-content .main-overlay {
+    background-color: rgba(121, 46, 143, 0.1);
+    position: relative;
+    margin: 0;
+    padding-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px; }
+
+.fa-primary-color {
+  color: #792E8F; }
+
+#left-selection .card, #right-section .card {
+  border: 0 !important;
+  background-color: rgba(234, 230, 237, 0.3);
+  color: #efe5ff; }
+
+#right-section .card {
+  border: 0 !important;
+  background-color: rgba(234, 230, 237, 0.3); }
+
+#right-section #user-panel hr {
+  color: #fff; }
+
+#right-section #user-panel .card-link {
+  color: #efe5ff;
+  text-decoration: none; }
+
+#right-section .user-panel-detail {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px; }
+
+#home-quicklinks .img-thumbnail {
+  border: 0 !important; }
+
+#home-quicklinks .card {
+  border: 0 !important; }
+
+#middle-section {
+  background-color: rgba(255, 255, 255, 0.7); }
+  #middle-section .card {
+    border: 0 !important; }

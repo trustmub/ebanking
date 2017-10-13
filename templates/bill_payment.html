@@ -1,0 +1,499 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-lg-6" id="middle-section">
+        <div class="row my-0">
+            <div class="co-lg-12">
+                <!-- Call to Action Well -->
+                <div class="card text-white bg-secondary mx-0 text-center">
+                    <div class="card-body">
+                        <p class="text-white m-0">Please be sure to check your service account details before confirming
+                            payments!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="biller-tab" data-toggle="tab" href="#biller"
+                           role="tab"
+                           aria-controls="biller" aria-expanded="true">Billers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="schools-tab" data-toggle="tab" href="#school" role="tab"
+                           aria-controls="school">Schools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="dd-tab" data-toggle="tab" href="#dd" role="tab"
+                           aria-controls="dd">Direct
+                            Debits</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <!-- Biller content-->
+                    <div class="tab-pane fade show active" id="biller" role="tabpanel"
+                         aria-labelledby="biller-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-4 text-center">
+                                <a href="#cohModal" data-toggle="modal"
+                                   data-target="#cohModal"><span class="fa-stack fa-3x">
+                                                <img src="/static/img/school/City-of-Harare-Logo.jpg"
+                                                     alt="City of Harare image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25">City of Harare</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#zesaModal" data-toggle="modal" data-target="#zesaModal"><span
+                                        class="fa-stack fa-3x">
+                                                <img src="/static/img/school/zesa_logo.jpg" alt="ZESA image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25">Zesa Prepaid</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#teloneModal" data-toggle="modal" data-target="#teloneModal"><span
+                                        class="fa-stack fa-3x">
+                                                <img src="/static/img/school/telone_logo.jpg" alt="Telone image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25">Telone</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#zolModal" data-toggle="modal" data-target="#zolModal"><span
+                                        class="fa-stack fa-3x">
+                                                <img src="/static/img/school/logo.PNG" alt="ZOL image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25">ZOL</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- School content -->
+                    <div class="tab-pane fade" id="school" role="tabpanel" aria-labelledby="schools-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-4 text-center">
+                                <a href="#arundelSchoolModal" data-toggle="modal"
+                                   data-target="#arundelSchoolModal"><span class="fa-stack fa-3x">
+                                                <img src="/static/img/school/arundel_jnr.jpg" alt="arundel image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25 mt-2">Arundel</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#barwickSchoolModal" data-toggle="modal"
+                                   data-target="#barwickSchoolModal"><span class="fa-stack fa-3x">
+                                                <img src="/static/img/school/Barwick_School_Logo.jpg"
+                                                     alt="arundel image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25 mt-2">Barwick</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#braydenSchoolModal" data-toggle="modal"
+                                   data-target="#braydenSchoolModal"><span class="fa-stack fa-3x">
+                                                <img src="/static/img/school/Bryden_Country_School_Logo.png"
+                                                     alt="arundel image"
+                                                     class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25 mt-2">Bryden</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="#cbcSchoolModal" data-toggle="modal"
+                                   data-target="#cbcSchoolModal"><span class="fa-stack fa-3x">
+                                            <img src="/static/img/school/CBC.png" alt="Christian Brothers College image"
+                                                 class="img-thumbnail img-fluid rounded-circle">
+                                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                                    <!--<i class="fa fa-money fa-stack-1x fa-inverse"></i>-->
+                                            </span></a>
+                                <p class="h-25 mt-2">CBC</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="" target="_blank"><span class="fa-stack fa-3x"><i
+                                        class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x fa-inverse"></i></span></a>
+                                <p class="h-25 mt-2">Chisi Junior</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="" target="_blank"><span class="fa-stack fa-3x"><i
+                                        class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x fa-inverse"></i></span></a>
+                                <p class="h-25 mt-2">Convent High</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="" target="_blank"><span class="fa-stack fa-3x"><i
+                                        class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x fa-inverse"></i></span></a>
+                                <p class="h-25 mt-2">Convent Primary</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <a href="" target="_blank"><span class="fa-stack fa-3x"><i
+                                        class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x fa-inverse"></i></span></a>
+                                <p class="h-25 mt-2">Eaglesvale Juniour</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Direct Debit Content -->
+                    <div class="tab-pane fade" id="dd" role="tabpanel" aria-labelledby="dd-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-12">
+                                <form action="{{ url_for('bill.schedule_pay') }}" method="post">
+                                    <div class="form-group row">
+                                        <label for="biller"
+                                               class="col-sm-3 col-form-label">Biller</label>
+                                        <div class="col-sm-9">
+                                            {{ ddform.biller(class="form-control") }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputAccount"
+                                               class="col-sm-3 col-form-label">Service Account</label>
+                                        <div class="col-sm-9">
+                                            {{ ddform.service_account(class_="form-control", placeholder="Service Account Number") }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="frequencyInput"
+                                               class="col-sm-3 col-form-label">Frequency</label>
+                                        <div class="col-sm-9">
+                                            {{ ddform.frequency(class="form-control") }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputDate"
+                                               class="col-sm-3 col-form-label">Start Date</label>
+                                        <div class="col-sm-9">
+                                            {{ ddform.start_date(class_="form-control", type="date") }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputAmount"
+                                               class="col-sm-2 col-form-label">Amount</label>
+                                        <div class="col-sm-10">
+                                            {{ ddform.amount(class="form-control", placeholder="Amount") }}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">Agree</div>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <label class="form-check-label">
+                                                    {{ ddform.accept_toc(class="form-check-input") }}
+                                                    I agree to the <a href="#termsandconditionModal" data-toggle="modal"
+                                                                      data-target="#termsandconditionModal"> Terms
+                                                    and Conditions </a>for using this service.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Save Schedule</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.col-lg-6 -->
+{% endblock %}
+
+{% block modal_content %}
+    <div class="modal fade" id="cohModal" tabindex="-1" role="dialog" aria-labelledby="cohModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cohModalLabel"> Payment for | City Of Harare <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('bill.bill_pay') }}" method="post">
+                        <div class="form-group row">
+                            <label for="billAccountNumber" class="col-sm-5 col-form-label">Enter Account Number</label>
+                            <div class="col-sm-5">
+                                {{ form.account(class_="form-control", placeholder="Zesa Account number") }}
+                                {#                            <input type="text" id="billAccountNumber" class="form-control" placeholder="">#}
+                            </div>
+                            <label for="billAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                {{ form.amount(class_="form-control", placeholder="Amount") }}
+                                {#                            <input type="number" id="billAmountNumber" class="form-control" placeholder="">#}
+                            </div>
+                            <div class="col-sm-5">
+                                {#                            {{ form.amount(class_="form-control", placeholder="Amount") }}#}
+                                <input type="text" id="billType" name="billType" class="form-control" value="ZESA"
+                                       hidden>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-secondary btn-md btn- block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="zesaModal" tabindex="-1" role="dialog" aria-labelledby="zesaModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="zesaModalLabel"> Payment for | Zesa <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="zesaAccountNumber" class="col-sm-5 col-form-label">Enter Account Number</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="zesaAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="zesaAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="zesaAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="arundelSchoolModal" tabindex="-1" role="dialog"
+         aria-labelledby="arundelSchoolModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="arundelSchoolModalLabel"> School Payment | Arundel Junior <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="arundelAccountNumber" class="col-sm-5 col-form-label">Enter Account
+                                Number</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="arundelAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="arundelAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="arundelAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="barwickSchoolModal" tabindex="-1" role="dialog"
+         aria-labelledby="barwickSchoolModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="barwickSchoolModalLabel"> School Payment | Barwick <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="barwickAccountNumber" class="col-sm-5 col-form-label">Enter Account
+                                Number</label>
+                            <div class="col-sm-5">
+                                <input type="text" id="barwickAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="barwickAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="barwickAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="braydenSchoolModal" tabindex="-1" role="dialog"
+         aria-labelledby="braydenSchoolModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="braydenSchoolModalLabel"> School Payment | Bryden <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="brydenAccountNumber" class="col-sm-5 col-form-label">Enter Account
+                                Number</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="brydenAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="brydenAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="brydenAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cbcSchoolModal" tabindex="-1" role="dialog" aria-labelledby="cbcSchoolModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cbcSchoolModalLabel"> School Payment | CBC <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="cbcAccountNumber" class="col-sm-5 col-form-label">Enter Account Number</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="cbcAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="cbcAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="cbcAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="teloneModal" tabindex="-1" role="dialog" aria-labelledby="teloneModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="teloneModalLabel"> Payment for | TelOne <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="teloneAccountNumber" class="col-sm-5 col-form-label">Enter Account
+                                Number</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="teloneAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="teloneAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="teloneAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="zolModal" tabindex="-1" role="dialog" aria-labelledby="zolModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="zolModalLabel"> Payment for | ZOL <i
+                            class="fa fa-lock"></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group row">
+                            <label for="zolAccountNumber" class="col-sm-5 col-form-label">Enter Account Number</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="zolAccountNumber" class="form-control" placeholder="">
+                            </div>
+                            <label for="zolAmountNumber" class="col-sm-5 col-form-label">Enter Amount</label>
+                            <div class="col-sm-5">
+                                <input type="number" id="zolAmountNumber" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary btn-md btn-block">Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="termsandconditionModal" tabindex="-1" role="dialog"
+         aria-labelledby="termsandconditionModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsandconditionModalLabel"> Payee Bookmarks Ts and Cs </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequatur, cumque dolorem
+                        doloremque
+                        eius fugiat nostrum quos. Corporis debitis neque odio recusandae reprehenderit rerum totam
+                        voluptate? Ab ad aliquid asperiores assumenda consequatur consequuntur distinctio dolor eos
+                        excepturi in incidunt, ipsum itaque iure molestias nobis odio pariatur placeat sit suscipit
+                        tempore
+                        tenetur, unde, vitae voluptatibus. Eveniet maxime non voluptatem? Assumenda atque ex iste rerum
+                        veniam! Aliquid asperiores commodi dicta dolore eos laborum, natus nulla praesentium quaerat
+                        saepe
+                        ullam voluptate! Accusamus deleniti dicta doloribus ducimus expedita facere, id in incidunt
+                        molestiae nisi numquam obcaecati provident quae quos reprehenderit suscipit ut veritatis
+                        voluptates!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, facilis fugit harum
+                        molestias
+                        qui ut.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

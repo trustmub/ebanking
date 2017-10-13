@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Small Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link href="/static/css/small-business.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav id="stewardNavigation" class="animated fadeInDown navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Steward Bank Zimbabwe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bill_payment.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="statement.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Page Content -->
+<div class="main-content">
+    <div class="main-overlay">
+        <div class="container">
+            <!-- Main Row -->
+            <div class="row py-4">
+                <div class="col-lg-4">
+                    <div class="card h-100" id="loginCard">
+                        <div class="card-header text-center">User Login | <i class="fa fa-lock"></i><span><i></i></span>
+                        </div>
+                        <div class="card-body text-center">
+                            <form action="{{ url_for('user.login') }}" method="post">
+                                {{ form.csrf_token }}
+                                <div class="animated zoomIn form-group">
+                                    <!--<label for="profileNumber">Profile Number</label>-->
+                                    {{ form.username(class_="form-control", placeholder="Enter Username/Profile Number") }}
+{#                                    <input type="text" class="form-control" name="profilenumber" id="profilenumber"#}
+{#                                           aria-describedby="emailHelp" placeholder="Enter Username/Profile Number">#}
+{#                                    {{ form.username }}#}
+                                    <!--<small id="emailHelp" class="form-text text-muted">Customer Profile Number</small>-->
+                                </div>
+                                <div class="animated zoomIn form-group">
+                                    {{ form.password(class_="form-control", placeholder="Password") }}
+{#                                    <input type="password" class="form-control" name="profilePassword"#}
+{#                                           id="profilePassword"#}
+{#                                           aria-describedby="password" placeholder="Password">#}
+                                    <small id="emailHelp" class="form-text text-muted">
+                                        <a href="#passwordResetModal" data-toggle="modal"
+                                           data-target="#passwordResetModal"> Forgot Password? </a><span
+                                            tabindex="0" data-container="body" data-trigger="focus"
+                                            data-toggle="popover" data-placement="right"
+                                            title="Important Info"
+                                            data-content="Ensure you have your National ID Number and registered account number."><i
+                                            class="fa fa-info-circle"></i></span>
+                                    </small>
+
+                                </div>
+                                <button type="submit"
+                                        class="animated slideInLeft btn btn-outline-secondary btn-md btn-block">
+                                    Login
+                                </button>
+                            </form>
+                            <small class="card-text">Please note that we will never call you or phone you asking for
+                                your profile ID and or Password.
+                            </small>
+                            <hr>
+                            <h6>New to Steward Intenet Banking?</h6>
+                            <small class="card-text">Register Now For Online Banking.</small>
+                            <button class="btn btn-outline-secondary " data-toggle="modal" data-target="#registerModal">
+                                Register Now
+                            </button>
+                            <br><br>
+                            <div class="card">
+                                <div class="card-header">Exchange Rates
+                                    <small>7 Aug 2017</small>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table table-striped table-sm">
+                                        <thead>
+                                        <tr>
+                                            <th>Currency</th>
+                                            <th>Buy</th>
+                                            <th>Sell</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="table-">
+                                        <tr>
+                                            <td>GBP</td>
+                                            <td>1.2848</td>
+                                            <td>1.3896</td>
+                                        </tr>
+                                        <tr>
+                                            <td>EUR</td>
+                                            <td>1.1315</td>
+                                            <td>1.2239</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ZAR</td>
+                                            <td>13.0589</td>
+                                            <td>14.1246</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <small>The base curreny for these rates is <strong>United States Dollar</strong></small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-4 -->
+                <div class="col-lg-8">
+                    <div class="row my-0" id="home-quicklinks">
+                        <div class="animated fadeIn col-lg-12">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img class="img-fluid rounded" src="/static/img/promotion1.jpeg"
+                                             alt="First slide">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="img-fluid rounded" src="/static/img/promotion2.jpeg"
+                                             alt="Second slide">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<img class="img-fluid rounded" src="img/promotion1.jpeg" alt="">-->
+                        </div>
+                        <div class="co-lg-12">
+                            <!-- Call to Action Well -->
+                            <div class="card text-white bg-secondary my-4 text-center">
+                                <div class="card-body">
+                                    <p class="text-white m-0">This call to action card is a great place to showcase some
+                                        important information or display a clever tagline!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/Bank-128.png" class="img-thumbnail" alt="Branch">
+                                    <!--<i class="fa fa-bank"></i>-->
+                                    <h4>Branches</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/ATM-128.png" class="img-thumbnail" alt="Branch">
+                                    <!--<i class="fa fa-money"></i>-->
+                                    <h4>ATM</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/User-Group-128.png" class="img-thumbnail" alt="Agents">
+                                    <h4>Agents</h4>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/Stock-Exchange-01-128.png" class="img-thumbnail" alt="Agents">
+                                    <h4>Exchange Rates</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/Mail-01-128.png" class="img-thumbnail" alt="Agents">
+                                    <h4>Contacts</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img src="/static/img/Message-Information-128.png" class="img-thumbnail"
+                                         alt="Agents">
+                                    <h4>Info</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- overlay -->
+</div><!-- main content wrapper -->
+
+<!-- modal section -->
+
+<!-- Registration modal -->
+<div class="animated fadeInDown modal" id="registerModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registration Form | Secure <i class="fa fa-lock"></i>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="accordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingOne">
+                            <h6 class="mb-0">
+                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                                   aria-controls="collapseOne">
+                                    Personal Information
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <form id="registerInfo">
+                                    <div class="form-group">
+                                        <label for="idType">
+                                            <small>Identification Type</small>
+                                        </label>
+                                        <select class="form-control" name="idType" id="idType"
+                                                aria-describedby="sizing-addon2">
+                                            <option value="nid">National ID</option>
+                                            <option value="pass">Passport Number</option>
+                                        </select>
+                                        <!--<small id="emailHelp" class="form-text text-muted">Customer Profile Number</small>-->
+                                        <div class="form-group">
+                                            <label for="idNumber">
+                                                <small>ID Number</small>
+                                            </label>
+                                            <input type="text" class="form-control" id="idNumber"
+                                                   aria-describedby="idNumber" placeholder="eg 12-345678Y90">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dob">
+                                                <small>DOB</small>
+                                            </label>
+                                            <input type="date" class="form-control" id="dob" aria-describedby="dob"
+                                                   placeholder="yyyy/mm/dd">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="accountNumber">
+                                                <small>Account Number</small>
+                                            </label>
+                                            <input type="number" class="form-control" id="accountNumber"
+                                                   aria-describedby="accountNumber" placeholder="">
+                                        </div>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" id="tndcRegCheck"
+                                                       required>
+                                                <small>I/We have read and understand the <a href="#" target="_blank">Terms
+                                                    and
+                                                    Conditions</a>
+                                                    which contains the policy summaries and other account information.
+                                                </small>
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="btn btn-outline-secondary btn-md float-right">Next
+                                            <i class="fa fa-arrow-right"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwo">
+                            <h6 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
+                                   aria-controls="collapseTwo">
+                                    OTP
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
+                             data-parent="#accordion">
+                            <div class="card-body text-center">
+                                <form id="otpConfirmation">
+                                    <div class="form-group">
+                                        <label for="otpNumber">
+                                            <small>OTP</small>
+                                        </label>
+                                        <input type="number" class="form-control text-center" id="otpNumber"
+                                               aria-describedby="otpNumber" placeholder="">
+                                    </div>
+                                    <button type="button" class="btn btn-outline-secondary btn-md float-right">Next
+                                        <i class="fa fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree">
+                            <h6 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false"
+                                   aria-controls="collapseThree">
+                                    User ID/Password
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <p> Enter the preferred username and password. Be sure to meet the password complexity
+                                    below
+                                <ul>
+                                    <li>The password must have at least 1 Uppercase</li>
+                                    <li>The password must have 1 numeric</li>
+                                </ul>
+                                </p>
+                                <form id="passwordConfirmation">
+                                    <div class="form-group">
+                                        <label for="username">
+                                            <small>Preferred Username</small>
+                                        </label>
+                                        <input type="text" class="form-control" id="username"
+                                               aria-describedby="username" placeholder="Preferred Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password1">
+                                            <small>Password</small>
+                                        </label>
+                                        <input type="password" class="form-control" id="password1"
+                                               aria-describedby="password1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password2">
+                                            <small>Confirm Password</small>
+                                        </label>
+                                        <input type="password" class="form-control" id="password2"
+                                               aria-describedby="password2" placeholder="Confirm Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-secondary btn-md float-right">Next
+                                        <i class="fa fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Reset Password Modal -->
+<div class="modal fade" id="passwordResetModal" tabindex="-1" role="dialog" aria-labelledby="passwordResetModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="passwordResetModalLabel">Password Reset Form | Secure <i
+                        class="fa fa-lock"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="resetAccordion" role="tablist">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="heading1">
+                            <h6 class="mb-0">
+                                <a data-toggle="collapse" href="#collapse1" aria-expanded="true"
+                                   aria-controls="collapse1">
+                                    Personal Information
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
+                             data-parent="#resetAccordion">
+                            <div class="card-body">
+                                <form action="">
+                                    <!--<div class="form-group">-->
+                                    <!--<label for="idType">-->
+                                    <!--<small>Identification Type</small>-->
+                                    <!--</label>-->
+                                    <!--<select class="form-control" name="idType" id="idType"-->
+                                    <!--aria-describedby="sizing-addon2">-->
+                                    <!--<option value="">National ID</option>-->
+                                    <!--<option value="">Passport Number</option>-->
+                                    <!--</select>-->
+                                    <!--&lt;!&ndash;<small id="emailHelp" class="form-text text-muted">Customer Profile Number</small>&ndash;&gt;-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <label for="resetIdNumber">
+                                            <small>ID Number</small>
+                                        </label>
+                                        <input type="text" class="form-control" id="resetIdNumber"
+                                               aria-describedby="resetIdNumber" placeholder="eg 12-345678Y90">
+
+                                    </div>
+                                    <!--<div class="form-group">-->
+                                    <!--<label for="dob">-->
+                                    <!--<small>DOB</small>-->
+                                    <!--</label>-->
+                                    <!--<input type="date" class="form-control" id="dob" aria-describedby="dob"-->
+                                    <!--placeholder="yyyy/mm/dd">-->
+
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <label for="resetAccountNumber">
+                                            <small>Account Number</small>
+                                        </label>
+                                        <input type="number" class="form-control" id="resetAccountNumber"
+                                               aria-describedby="resetAccountNumber" placeholder="">
+                                    </div>
+                                    <button type="button" class="btn btn-outline-secondary btn-md float-right">Next
+                                        <i class="fa fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- Personal information -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="heading2">
+                            <h6 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapse2" aria-expanded="false"
+                                   aria-controls="collapse2">
+                                    OTP
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2"
+                             data-parent="#resetAccordion">
+                            <div class="card-body text-center">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="resetOtpNumber">
+                                            <small>OTP</small>
+                                        </label>
+                                        <input type="number" class="form-control text-center" id="resetOtpNumber"
+                                               aria-describedby="resetOtpNumber" placeholder="">
+                                    </div>
+                                    <button type="button" class="btn btn-outline-secondary btn-md float-right">Next
+                                        <i class="fa fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- OTP -->
+                    <div class="card">
+                        <div class="card-header" role="tab" id="heading3">
+                            <h6 class="mb-0">
+                                <a class="collapsed" data-toggle="collapse" href="#collapse3" aria-expanded="false"
+                                   aria-controls="collapse3">
+                                    User ID/Password
+                                </a>
+                            </h6>
+                        </div>
+                        <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3"
+                             data-parent="#resetAccordion">
+                            <div class="card-body">
+                                <p> Enter the preferred username and password. Be sure to meet the password complexity
+                                    below
+                                <ul>
+                                    <li>The password must have at least 1 Uppercase</li>
+                                    <li>The password must have 1 numeric</li>
+                                </ul>
+                                </p>
+                                <form action="">
+                                    <div class="form-group">
+                                        <label for="resetPassword1">
+                                            <small>New Password</small>
+                                        </label>
+                                        <input type="password" class="form-control" id="resetPassword1"
+                                               aria-describedby="resetPassword1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="resetPassword2">
+                                            <small>Confirm Password</small>
+                                        </label>
+                                        <input type="password" class="form-control" id="resetPassword2"
+                                               aria-describedby="resetPassword2" placeholder="Confirm Password">
+                                    </div>
+                                    <button type="button" class="btn btn-outline-secondary btn-md float-right">Next
+                                        <i class="fa fa-arrow-right"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div><!-- Password capturing -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- end of modal section
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/static/jquery/jquery.min.js"></script>
+<script src="/static/popper/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

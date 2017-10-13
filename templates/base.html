@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Small Business - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link href="/static/css/small-business.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav id="stewardNavigation" class="animated fadeInDown navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Steward Bank Zimbabwe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('landing.home') }}">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Portal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('user.logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="landing-content">
+    <div class="landing-overlay">
+        <div class="container">
+            <!-- Main Row -->
+            <div class="row py-4">
+                <div class="col-lg-2" id="left-selection">
+                    <div class="animated fadeIn card"><!-- Bilapayment card-->
+                        <div class="card-body text-center">
+                            <a href="{{ url_for('bill.bill_pay') }}">
+                        <span class="fa-stack fa-3x fa-primary-color">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
+                            </span></a>
+                            <p class="h-25">Bill Payments</p>
+                        </div>
+                    </div>
+                    <div class="card"><!-- Transfer Card-->
+                        <div class="card-body text-center">
+                            <a href="{{ url_for('transfer.transfer') }}">
+                        <span class="fa-stack fa-3x fa-primary-color">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-exchange fa-stack-1x fa-inverse"></i>
+                            </span></a>
+                            <p class="h-25">Transfer</p>
+                        </div>
+                    </div>
+                    <div class="card"><!-- Statemeents -->
+                        <div class="card-body text-center">
+                            <a href="{{ url_for('statement.stat_request') }}">
+                        <span class="fa-stack fa-3x fa-primary-color">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-print fa-stack-1x fa-inverse"></i>
+                            </span></a>
+                            <p class="h-25">Statement</p>
+                        </div>
+                    </div>
+                    <div class="card"><!-- Steward Pay Card -->
+                        <div class="card-body text-center">
+                            <a href="#">
+                        <span class="fa-stack fa-3x fa-primary-color">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                            </span></a>
+                            <p class="h-25">StewardPay</p>
+                        </div>
+                    </div>
+                </div><!-- /.col-md-2 -->
+                {% block content %}
+                {% endblock %}
+                <div class="col-lg-4" id="right-section"><!-- Client and account detail column-->
+                    <div class="card">
+                        <div class="user-panel-detail m-2">
+                            <div class="card-body text-center">
+                                <div class="row py-2" id="user-panel">
+                                    <div class="col-lg-5">
+                                        <img src="/static/img/users/avatar.png" alt="user avatar"
+                                             class="img-thumbnail rounded-circle" style="height: 100px;">
+                                        <!--Clients face image -->
+                                    </div>
+                                    <div class="col-lg-7 text-center m-auto">
+                                        <p>{{ session['name'] }}</p><!--client name -->
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <hr>
+                                        <a href="#" class="card-link">View/Edit Profile</a>
+                                        <a href="#" class="card-link">Change Password</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Client image, name, Edit Profile, change pin-->
+                    <div class="card">
+                        <div class="user-panel-detail m-2">
+                            <div class="card-body">
+                                <p class="h6">My Accounts</p>
+                                <table class="table table-sm">
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ session['account'] }}</td>
+                                        <td>iSave</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- Account list summary info-->
+                    <div class="card">
+                        <div class="user-panel-detail m-2">
+                            <div class="card-body">
+                                <p class="h6">Quick Balance Check</p>
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr>
+                                        <th>Account</th>
+                                        <th>Balance</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ session['account'] }}</td>
+                                        <td>$ 209 200.45</td>
+                                        <td><i class="fa fa-refresh"></i></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- Quick Balance check -->
+                    <div class="card">
+                        <div class="user-panel-detail m-2">
+                            <div class="card-body">
+                                <p class="h6">Last Login Details</p>
+                                <hr>
+                                <p>Tue 23 Aug 2017 15:45</p>
+                            </div>
+                        </div>
+                    </div><!-- Previous Login details -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- Main row -->
+        </div><!-- /.container -->
+    </div><!-- Main overlay -->
+</div><!-- landing content -->
+
+<!-- modal section -->
+{% block modal_content %}
+{% endblock %}
+<!-- end of modal section
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <div class="col-lg-4">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+    </div><!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/static/jquery/jquery.min.js"></script>
+<script src="/static/popper/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

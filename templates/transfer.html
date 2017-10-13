@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="col-lg-6" id="middle-section">
+        <div class="row my-0">
+            <div class="co-lg-12">
+                <!-- Call to Action Well -->
+                <div class="card text-white bg-secondary mx-0 text-center">
+                    <div class="card-body">
+                        <p class="text-white m-0">This call to action card is a great place to showcase some
+                            important information
+                            or display a clever tagline!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="rtgs-tab" data-toggle="tab" href="#rtgs"
+                           role="tab"
+                           aria-controls="rtgs" aria-expanded="true">RTGS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="schools-tab" data-toggle="tab" href="#school" role="tab"
+                           aria-controls="school">ZIPIT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="dd-tab" data-toggle="tab" href="#dd" role="tab"
+                           aria-controls="dd">Internal</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <!-- Biller content-->
+                    <div class="tab-pane fade show active" id="rtgs" role="tabpanel"
+                         aria-labelledby="rtgs-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-12">
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="bankNames"
+                                               class="col-sm-3 col-form-label">Biller</label>
+                                        <div class="col-sm-9">
+                                            <select name="bankNames" id="bankNames"
+                                                    class="form-control">
+                                                <option value="1">African Century</option>
+                                                <option value="2">Agribank</option>
+                                                <option value="3">Barclays</option>
+                                                <option value="4">CABS</option>
+                                                <option value="5">CBZ</option>
+                                                <option value="6">Ecobank</option>
+                                                <option value="7">FBC Bank</option>
+                                                <option value="8">MBCA</option>
+                                                <option value="9">NMB</option>
+                                                <option value="10">POSB</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputDate"
+                                               class="col-sm-5 col-form-label">Destination Account
+                                            Number</label>
+                                        <div class="col-sm-7">
+                                            <input type="number" class="form-control" id="inputDate"
+                                                   placeholder="Account Number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputAmount"
+                                               class="col-sm-2 col-form-label">Amount</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="inputAmount"
+                                                   id="inputAmount"
+                                                   placeholder="Amount">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Make payment
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- School content -->
+                    <div class="tab-pane fade" id="school" role="tabpanel" aria-labelledby="schools-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-12">
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="bankNames"
+                                               class="col-sm-3 col-form-label">Biller</label>
+                                        <div class="col-sm-9">
+                                            <select name="bankNames" id="bankNames"
+                                                    class="form-control">
+                                                <option value="1">African Century</option>
+                                                <option value="2">Agribank</option>
+                                                <option value="3">Barclays</option>
+                                                <option value="4">CABS</option>
+                                                <option value="5">CBZ</option>
+                                                <option value="6">Ecobank</option>
+                                                <option value="7">FBC Bank</option>
+                                                <option value="8">MBCA</option>
+                                                <option value="9">NMB</option>
+                                                <option value="10">POSB</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="inputDate"
+                                               class="col-sm-5 col-form-label">Destination Account
+                                            Number</label>
+                                        <div class="col-sm-7">
+                                            <input type="number" class="form-control" id="inputDate"
+                                                   placeholder="Account Number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputAmount"
+                                               class="col-sm-2 col-form-label">Amount</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="inputAmount"
+                                                   id="inputAmount"
+                                                   placeholder="Amount">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Make payment
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Direct Debit Content -->
+                    <div class="tab-pane fade" id="dd" role="tabpanel" aria-labelledby="dd-tab">
+                        <div class="row my-4">
+                            <div class="col-lg-12">
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="inputDate"
+                                               class="col-sm-5 col-form-label">Destination Account Number</label>
+                                        <div class="col-sm-7">
+                                            <input type="number" class="form-control" id="inputDate"
+                                                   placeholder="Account Number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputAmount"
+                                               class="col-sm-2 col-form-label">Amount</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="inputAmount"
+                                                   id="inputAmount" placeholder="Amount">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">Make payment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.col-lg-6 -->
+{% endblock %}
