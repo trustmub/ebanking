@@ -1,3 +1,5 @@
+from models.model import db
+
 from flask import Flask, render_template
 from views.user import user
 from views.statement import statement
@@ -15,4 +17,7 @@ app.register_blueprint(transfer)
 app.register_blueprint(statement)
 
 if __name__ == '__main__':
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
     app.run()

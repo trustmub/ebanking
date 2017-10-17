@@ -66,18 +66,10 @@
                             <form action="{{ url_for('user.login') }}" method="post">
                                 {{ form.csrf_token }}
                                 <div class="animated zoomIn form-group">
-                                    <!--<label for="profileNumber">Profile Number</label>-->
                                     {{ form.username(class_="form-control", placeholder="Enter Username/Profile Number") }}
-{#                                    <input type="text" class="form-control" name="profilenumber" id="profilenumber"#}
-{#                                           aria-describedby="emailHelp" placeholder="Enter Username/Profile Number">#}
-{#                                    {{ form.username }}#}
-                                    <!--<small id="emailHelp" class="form-text text-muted">Customer Profile Number</small>-->
                                 </div>
                                 <div class="animated zoomIn form-group">
                                     {{ form.password(class_="form-control", placeholder="Password") }}
-{#                                    <input type="password" class="form-control" name="profilePassword"#}
-{#                                           id="profilePassword"#}
-{#                                           aria-describedby="password" placeholder="Password">#}
                                     <small id="emailHelp" class="form-text text-muted">
                                         <a href="#passwordResetModal" data-toggle="modal"
                                            data-target="#passwordResetModal"> Forgot Password? </a><span
@@ -261,46 +253,36 @@
                              data-parent="#accordion">
                             <div class="card-body">
                                 <form id="registerInfo">
+                                    {{ register_form.csrf_token }}
                                     <div class="form-group">
                                         <label for="idType">
                                             <small>Identification Type</small>
                                         </label>
-                                        <select class="form-control" name="idType" id="idType"
-                                                aria-describedby="sizing-addon2">
-                                            <option value="nid">National ID</option>
-                                            <option value="pass">Passport Number</option>
-                                        </select>
-                                        <!--<small id="emailHelp" class="form-text text-muted">Customer Profile Number</small>-->
+                                        {{ register_form.idType(class='form-control') }}
                                         <div class="form-group">
                                             <label for="idNumber">
                                                 <small>ID Number</small>
                                             </label>
-                                            <input type="text" class="form-control" id="idNumber"
-                                                   aria-describedby="idNumber" placeholder="eg 12-345678Y90">
-
+                                            {{ register_form.idNumber(class="form-control", placeholder="eg 12-345678Y90", required="true") }}
                                         </div>
                                         <div class="form-group">
                                             <label for="dob">
                                                 <small>DOB</small>
                                             </label>
-                                            <input type="date" class="form-control" id="dob" aria-describedby="dob"
-                                                   placeholder="yyyy/mm/dd">
-
+                                            {{ register_form.dob(class="form-control", placeholder="yyyy/mm/dd", type="date",required="true") }}
                                         </div>
                                         <div class="form-group">
-                                            <label for="accountNumber">
+                                            <label for="accountNumberReg">
                                                 <small>Account Number</small>
                                             </label>
-                                            <input type="number" class="form-control" id="accountNumber"
-                                                   aria-describedby="accountNumber" placeholder="">
+                                            {{ register_form.accountNumberReg(class="form-control", type="number", required="true") }}
+                                            <span id="accountChecked" style="color: red;" class="animated flash" hidden>Account does not exist</span>
                                         </div>
                                         <div class="form-check">
                                             <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" id="tndcRegCheck"
-                                                       required>
+                                                {{ register_form.tndcRegCheck(class="form-check-input", required="true") }}
                                                 <small>I/We have read and understand the <a href="#" target="_blank">Terms
-                                                    and
-                                                    Conditions</a>
+                                                    and Conditions</a>
                                                     which contains the policy summaries and other account information.
                                                 </small>
                                             </label>
@@ -328,11 +310,16 @@
                                     <div class="form-group">
                                         <label for="otpNumber">
                                             <small>OTP</small>
+                                            {% if session['new_otp'] %}
+                                                <p>{{ session['new_otp'] }}</p>
+                                                <p id="otpValidity"></p>
+                                            {% endif %}
                                         </label>
+
                                         <input type="number" class="form-control text-center" id="otpNumber"
-                                               aria-describedby="otpNumber" placeholder="">
+                                               aria-describedby="otpNumber" placeholder="" required>
                                     </div>
-                                    <button type="button" class="btn btn-outline-secondary btn-md float-right">Next
+                                    <button type="submit" class="btn btn-outline-secondary btn-md float-right">Next
                                         <i class="fa fa-arrow-right"></i></button>
                                 </form>
                             </div>
@@ -355,6 +342,7 @@
                                 <ul>
                                     <li>The password must have at least 1 Uppercase</li>
                                     <li>The password must have 1 numeric</li>
+                                    <li id="regMessageBoard" class="animated flash"></li>
                                 </ul>
                                 </p>
                                 <form id="passwordConfirmation">
@@ -362,22 +350,25 @@
                                         <label for="username">
                                             <small>Preferred Username</small>
                                         </label>
-                                        <input type="text" class="form-control" id="username"
-                                               aria-describedby="username" placeholder="Preferred Username">
+                                        <input type="text" class="form-control" id="regUsername"
+                                               aria-describedby="username" placeholder="Preferred Username" required>
+                                        <span id="usernameError" class="animated flash"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="password1">
                                             <small>Password</small>
                                         </label>
                                         <input type="password" class="form-control" id="password1"
-                                               aria-describedby="password1" placeholder="Password">
+                                               aria-describedby="password1" placeholder="Password" required>
+                                        {#<span id="passwordError" class="animated flash" hidden>Passwords Do not match</span>#}
                                     </div>
                                     <div class="form-group">
                                         <label for="password2">
                                             <small>Confirm Password</small>
                                         </label>
                                         <input type="password" class="form-control" id="password2"
-                                               aria-describedby="password2" placeholder="Confirm Password">
+                                               aria-describedby="password2" placeholder="Confirm Password" required>
+                                        <span id="passwordError" class="animated flash"></span>
                                     </div>
                                     <button type="submit" class="btn btn-outline-secondary btn-md float-right">Next
                                         <i class="fa fa-arrow-right"></i></button>

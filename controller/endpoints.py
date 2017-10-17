@@ -12,6 +12,19 @@ class Credentials(object):
         self.password = password
 
 
+class AccountLookup:
+    def __init__(self, account):
+        self.lookup_url = f'http://localhost:5002/account/lookup/{account}/'
+
+    def lookup(self):
+        try:
+            r = requests.get(self.lookup_url)
+            return r
+        except requests.RequestException as e:
+            r = e
+            return r
+
+
 class Login(Credentials):
     def __init__(self, username, password):
         Credentials.__init__(self, username, password)
