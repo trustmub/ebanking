@@ -26,10 +26,13 @@ $(document).ready(function () {
         }).done(function (data, textStatus, jqXHR) {
             var state = data.status;
             // console.log(state + "is the State Variable response");
-            if (state == 200) {
+            if (state === 200) {
                 // console.log("in the 200 condition");
                 $('#collapseOne').removeClass('show');
                 $('#collapseTwo').addClass('show');
+            }
+            else if (state === 500){
+                $('#identificationCheck').removeAttr('hidden')
             }
             else {
                 // change create a popup that the account is invalid

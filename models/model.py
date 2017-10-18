@@ -31,6 +31,9 @@ class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     account = db.Column(db.Integer)
     balance = db.Column(db.Float)
+    name = db.Column(db.String(100))
+    currency = db.Column(db.String(5))
+    # user_id = db.ForeignKey()
 
 
 class User(db.Model):

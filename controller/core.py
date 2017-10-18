@@ -5,7 +5,7 @@ from functools import wraps
 from flask import session as login_session, redirect, url_for, jsonify, json
 from flask_bcrypt import Bcrypt
 from models.model import OtpTable, db, User
-from controller.endpoints import AccountLookup
+from controller.endpoints import AccountLookup, CustomerLookup
 
 bc = Bcrypt()
 
@@ -35,16 +35,27 @@ def get_user_details(username):
     return r.json()
 
 
+def verify_customer(customer):
+    r = CustomerLookup(customer).lookup()
+    record = r.json()
+    my_id = "".join(("".join(record['id_number'].split(' '))).split('-'))
+    return my_id
+
+
 def verify_details(response):
     record = response.json()
     if record['status'] == 200:
-        otp = generate_otp(record['account_num'])
+        my_id_entered = "".join(("".join(login_session['reg_id'].split(' '))).split('-'))
+        national_id = verify_customer(record['customer_id'].upper().strip().strip('-'))
+        if national_id != my_id_entered:
+            return False
+        otp = generate_otp()
         save_otp(record['account_num'], otp)
         return otp
     return False
 
 
-def generate_otp(account):
+def generate_otp():
     otp = random.randint(11111, 99999)
     print(otp)
     return otp

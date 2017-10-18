@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/dummy.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="C:/Projects/APIs/contacts/apis/namespace1.py">
           <value>
             <set />
@@ -199,6 +204,11 @@
           </value>
         </entry>
         <entry key="dbtable:/9d3119f1/b583884a-434e-44e2-9e79-71109c472352/main.otp_table">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="dbtable:/b8fc5cbb/7a2dc1dc-f83b-427c-8514-07d335aa9c87/main.customer">
           <value>
             <set />
           </value>

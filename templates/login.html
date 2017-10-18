@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Small Business - Start Bootstrap Template</title>
+    <title>Steward Online Banking</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -264,6 +264,7 @@
                                                 <small>ID Number</small>
                                             </label>
                                             {{ register_form.idNumber(class="form-control", placeholder="eg 12-345678Y90", required="true") }}
+                                            <span id="identificationCheck" style="color: red;" class="animated flash" hidden>Wrong id for this account</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="dob">

@@ -98,6 +98,10 @@ class RegisterView(MethodView):
         login_session.pop('new_otp', None)
         if hasattr(r, 'status_code') and r.status_code == 200:
             verify = verify_details(r)
+            if verify is False:
+                resp = {'status': 500}
+                print(f"response when id do not match {resp}")
+                return jsonify(resp)
             login_session['new_otp'] = verify
             login_session['account_num'] = account_num
             print(f"hass attribure and {r.json()} status {r.status_code}")
