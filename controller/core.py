@@ -3,8 +3,11 @@ import random
 from functools import wraps
 
 from flask import session as login_session, redirect, url_for, jsonify, json
-
+from flask_bcrypt import Bcrypt
 from models.model import OtpTable, db, User
+from controller.endpoints import AccountLookup
+
+bc = Bcrypt()
 
 
 # user login decorator
@@ -18,6 +21,18 @@ def user_required(f):
         return f(*args, **kwargs)
 
     return decorator
+
+
+def login_function(username, password):
+    record = User.query.filter_by(username=username).first()
+    if record and bc.check_password_hash(record.password_hash, password):
+        return True
+
+
+def get_user_details(username):
+    user_account = User.query.filter_by(username=username).first()
+    r = AccountLookup(user_account.account).lookup()
+    return r.json()
 
 
 def verify_details(response):
@@ -64,7 +79,7 @@ def create_user(username, password):
         print("username is taken")
         return False
     user = User()
-    record = User(username=username, password_hash=user.hash_password(password))
+    record = User(username=username, account=login_session['account_num'], password_hash=user.hash_password(password))
     db.session.add(record)
     db.session.commit()
     print("user has bee successfully created")

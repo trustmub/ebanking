@@ -120,7 +120,11 @@
       <DataType>VARCHAR(50)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="36" parent="8">
+    <column id="36" parent="8" name="account">
+      <Position>3</Position>
+      <DataType>INT|0</DataType>
+    </column>
+    <key id="37" parent="8">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

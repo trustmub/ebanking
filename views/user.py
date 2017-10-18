@@ -2,8 +2,9 @@ from flask import Blueprint, request, render_template, redirect, url_for, jsonif
 from flask import session as login_session
 from flask.views import View, MethodView
 from forms.login_form import LoginForm, RegisterForm
+from flask_bcrypt import Bcrypt
 
-from controller.core import verify_details, is_otp_valid, create_user
+from controller.core import verify_details, is_otp_valid, create_user, login_function, get_user_details
 from controller.validators import *
 from controller.endpoints import Login, Register, AccountLookup
 
@@ -25,16 +26,27 @@ class LoginView(View):
                 username = request.form['username']
                 password = request.form['password']
 
-                user_auth = Login(username, password)
-                r = user_auth.login_user()
+                if login_function(username, password):
+                    user_details = get_user_details(username)
 
-                if hasattr(r, 'status_code') and r.status_code == 200:
-                    record = r.json()
                     login_session['username'] = username
-                    login_session['name'] = record['name']
-                    login_session['account'] = record['accountNumber']
+                    login_session['name'] = user_details['name']
+                    login_session['account'] = user_details['account_num']
+                    login_session['balance'] = user_details['balance']
+
                     return redirect(url_for('landing.home'))
                 return redirect(url_for('user.login'))
+
+                # user_auth = Login(username, password)
+                # r = user_auth.login_user()
+                #
+                # if hasattr(r, 'status_code') and r.status_code == 200:
+                #     record = r.json()
+                #     login_session['username'] = username
+                #     login_session['name'] = record['name']
+                #     login_session['account'] = record['accountNumber']
+                #     return redirect(url_for('landing.home'))
+                # return redirect(url_for('user.login'))
         return render_template('login.html', form=form, register_form=register_form)
 
 
@@ -46,6 +58,11 @@ class LogoutView(View):
         login_session.pop('username', None)
         login_session.pop('name', None)
         login_session.pop('account', None)
+        login_session.pop('account_num', None)
+        login_session.pop('reg_type', None)
+        login_session.pop('reg_id', None)
+        login_session.pop('dob', None)
+        login_session.pop('accept_toc', None)
         return redirect(url_for('user.login'))
 
 
@@ -83,7 +100,7 @@ class RegisterView(MethodView):
             verify = verify_details(r)
             login_session['new_otp'] = verify
             login_session['account_num'] = account_num
-            print(f"hass attribure and {verify} status {r.status_code}")
+            print(f"hass attribure and {r.json()} status {r.status_code}")
         print(f"This is jsonified response : {r.json()}")
         return jsonify(r.json())
 
@@ -120,6 +137,8 @@ class RegisterUserView(MethodView):
             return jsonify({'message': 'passwords don\'t match', 'status': 401}), 200
         if create_user(username, password):
             print("ater create user")
+            login_session.pop('account_num', None)
+            login_session.pop('new_otp', None)
             return jsonify({'message': 'User Created', 'status': 200}), 200
         return jsonify({'message': 'Username is not Unique', 'status': 404}), 200
 

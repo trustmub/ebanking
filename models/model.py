@@ -35,15 +35,13 @@ class Profile(db.Model):
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    account = db.Column(db.Integer)
     username = db.Column(db.String(50), nullable=False)
     password_hash = db.Column(db.String(50), nullable=False)
 
     def hash_password(self, password):
-        self.password_hash = pwd_context.encrypt(password)
+        self.password_hash = bcrypt.generate_password_hash(password)
         return self.password_hash
-
-    def verify_password(self, password):
-        return pwd_context.verify(password, self.password_hash)
 
 
 class Schedule(db.Model):
