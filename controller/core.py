@@ -47,7 +47,7 @@ def verify_details(response):
     if record['status'] == 200:
         my_id_entered = "".join(("".join(login_session['reg_id'].split(' '))).split('-'))
         national_id = verify_customer(record['customer_id'].upper().strip().strip('-'))
-        if national_id != my_id_entered:
+        if national_id != my_id_entered.upper():
             return False
         otp = generate_otp()
         save_otp(record['account_num'], otp)
